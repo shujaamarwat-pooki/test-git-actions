@@ -1,0 +1,56 @@
+name: Akimbo CI/CD
+
+on:
+  pull_request:
+    branches:
+      - development
+  push:
+    branches:
+      - development
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'  # Ensure you're using a compatible version
+
+    # Install dependencies
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Lint and Test
+      run: |
+        npm run lint
+        npm run test
+
+    - name: Build Angular Library
+      run: npm run build
+
+    - name: Generate Component Pages
+      run: npm run generate-pages
+
+    - name: Deploy to Server
+      run: |
+        npm run deploy  # or custom deployment script
+
+  # notify:
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   steps:
+  #   # Send notification to Slack
+  #   - name: Notify Slack
+  #     uses: slackapi/slack-github-action@v1.23.0
+  #     with:
+  #       payload: |
+  #         {
+  #           "text": "New block/component has been merged and deployed. View the details here: <link_to_block_page>"
+  #         }
+  #     env:
+  #       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
