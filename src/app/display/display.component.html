@@ -1,0 +1,16 @@
+<div class="container mx-auto">
+    <h1 class="text-2xl font-bold mb-4">Components Showcase</h1>
+    <div *ngFor="let component of components" class="mb-6 p-4 border rounded-lg shadow-lg">
+      <h2 class="text-xl font-semibold">{{ component.name }}</h2>
+      
+      <h3 class="font-medium">HTML</h3>
+      <pre class="bg-gray-100 p-2 rounded">{{ component.html }}</pre>
+      
+      <h3 class="font-medium">CSS</h3>
+      <pre class="bg-gray-100 p-2 rounded">{{ component.css }}</pre>
+      
+      <h3 class="font-medium">TypeScript</h3>
+      <pre class="bg-gray-100 p-2 rounded">{{ component.ts }}</pre>
+    </div>
+  </div>
+  
