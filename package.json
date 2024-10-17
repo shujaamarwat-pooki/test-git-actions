@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "populate": "node backend.js",
     "start:prod": "concurrently \"npm run build\" \"npm run populate\"",
-    "test:ci": "ng test --no-watch --no-progress --",
+    "test:ci": "ng test --no-watch --no-progress --"
   },
   "private": true,
   "dependencies": {
