@@ -26,6 +26,9 @@ jobs:
 
     - name: Populate Block List
       run: npm run populate
+      
+    - name: Give Execute Permission to Script
+      run: chmod +x ./scripts/check_new.sh
 
     - name: Check new block
       run: ./scripts/check_new.sh
