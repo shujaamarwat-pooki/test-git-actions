@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { DropdownComponent } from './block/dropdown/dropdown.component';
 import { ButtonRedComponent } from './block/button-red/button-red.component';
+import { ButtonGreenComponent } from './block/button-green/button-green.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ButtonRedComponent } from './block/button-red/button-red.component';
     NotfoundComponent,
     DropdownComponent,
     ButtonRedComponent,
+    ButtonGreenComponent,
   ],
   imports: [
     BrowserModule,
