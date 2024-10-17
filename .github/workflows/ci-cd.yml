@@ -1,5 +1,3 @@
-name: Akimbo CI/CD
-
 on:
   pull_request:
     branches:
@@ -33,29 +31,14 @@ jobs:
       run: chmod +x ./scripts/check_new.sh
 
     - name: Check new block
-      run: ./scripts/check_new.sh
+      id: check_block
+      run: |
+        new_blocks=$(./scripts/check_new.sh)
+        echo "NEW_BLOCKS=$new_blocks" >> $GITHUB_ENV  # Set environment variable
 
     - name: Lint and Test
       run: npm run lint
 
-    - name: Build Angular Library
-      run: npm run build
+    - name: Echo Test
+      run: echo $NEW_BLOCKS
 
-    # - name: Deploy to Server
-    #   run: |
-    #     npm run deploy  # or custom deployment script
-
-  # notify:
-  #   runs-on: ubuntu-latest
-  #   needs: build
-  #   steps:
-  #   # Send notification to Slack
-  #   - name: Notify Slack
-  #     uses: slackapi/slack-github-action@v1.23.0
-  #     with:
-  #       payload: |
-  #         {
-  #           "text": "New block/component has been merged and deployed. View the details here: <link_to_block_page>"
-  #         }
-  #     env:
-  #       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
