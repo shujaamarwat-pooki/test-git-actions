@@ -24,6 +24,9 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
+    - name: Popiulate Block List
+      run: npm run populate
+
     - name: Lint and Test
       run: |
         npm run lint
@@ -31,9 +34,6 @@ jobs:
 
     - name: Build Angular Library
       run: npm run build
-
-    - name: Generate Component Pages
-      run: npm run generate-pages
 
     - name: Deploy to Server
       run: |

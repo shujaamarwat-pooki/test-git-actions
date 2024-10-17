@@ -7,13 +7,17 @@ import { ButtonComponent } from './block/button/button.component';
 import { ButtonImageComponent } from './block/button-image/button-image.component';
 import { DisplayComponent } from './display/display.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonComponent,
     ButtonImageComponent,
-    DisplayComponent
+    DisplayComponent,
+    HomeComponent,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,

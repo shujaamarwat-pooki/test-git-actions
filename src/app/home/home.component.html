@@ -1,0 +1,18 @@
+<div class="container mx-auto p-4">
+  <h1 class="text-3xl font-bold mb-6">Available Blocks/Components</h1>
+
+  <div class="overflow-y-auto max-h-96">
+    <ul class="grid grid-cols-1 lg:grid-cols-2 gap-4" *ngIf="folders.length > 0; else noBlocks">
+      <li class="bg-white rounded-lg shadow-md p-4" *ngFor="let folder of folders">
+        <button class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="goToComponent(folder)">
+          {{ folder | titlecase }} Component
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #noBlocks>
+    <p class="text-center text-gray-600">No blocks or components found.</p>
+  </ng-template>
+</div>
+
