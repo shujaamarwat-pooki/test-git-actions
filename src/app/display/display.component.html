@@ -16,21 +16,12 @@
       <div class="code-tabs">
         <div class="flex border-b">
           <button (click)="activeTab = 'html'" [class.active]="activeTab === 'html'" class="px-4 py-2 font-semibold focus:outline-none" [class.text-blue-600]="activeTab === 'html'">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-            </svg>
             HTML
           </button>
           <button (click)="activeTab = 'css'" [class.active]="activeTab === 'css'" class="px-4 py-2 font-semibold focus:outline-none" [class.text-blue-600]="activeTab === 'css'">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>
             CSS
           </button>
           <button (click)="activeTab = 'ts'" [class.active]="activeTab === 'ts'" class="px-4 py-2 font-semibold focus:outline-none" [class.text-blue-600]="activeTab === 'ts'">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-            </svg>
             TS
           </button>
         </div>
@@ -38,11 +29,11 @@
           <pre *ngIf="activeTab === 'html'" class="bg-gray-100 p-4 rounded-lg overflow-x-auto"><code class="language-html">{{ componentData.html }}</code></pre>
           <pre *ngIf="activeTab === 'css'" class="bg-gray-100 p-4 rounded-lg overflow-x-auto"><code class="language-css">{{ componentData.css }}</code></pre>
           <pre *ngIf="activeTab === 'ts'" class="bg-gray-100 p-4 rounded-lg overflow-x-auto"><code class="language-typescript">{{ componentData.ts }}</code></pre>
-          <button (click)="copyCode(componentData[activeTab], activeTab.toUpperCase())" class="absolute top-2 right-2 p-2 bg-white rounded-full shadow-md hover:bg-gray-100 focus:outline-none">
+          <a type="button" (click)="copyCode(componentData[activeTab], activeTab.toUpperCase())" class="absolute top-2 right-2 p-2 bg-white rounded-full shadow-md hover:bg-gray-100 focus:outline-none">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-            </svg>.
-          </button>
+            </svg>
+          </a>
         </div>
       </div>
     </section>

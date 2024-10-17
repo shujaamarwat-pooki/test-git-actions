@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const blockDir = path.join(__dirname, "src/app/block");
-const outputFile = path.join(__dirname, "src/app/shared/.blocks.ts");
+const outputFile = path.join(__dirname, "src/app/shared/blocks.ts");
 
 // Ensure the output file exists or create it
 if (!fs.existsSync(outputFile)) {
