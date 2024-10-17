@@ -39,6 +39,12 @@ jobs:
     - name: Lint and Test
       run: npm run lint
 
+    - name: Debug NEW_BLOCKS
+      run: |
+        echo "New blocks: $NEW_BLOCKS"
+      env:
+        NEW_BLOCKS: ${{ env.NEW_BLOCKS }}
+
     - name: Build Angular Library
       run: npm run build
 
@@ -48,7 +54,7 @@ jobs:
       with:
         payload: |
           {
-            "text": "🚀 A new block/component has been added: ${env.NEW_BLOCKS}.
+            "text": "A new block/component has been added: ${NEW_BLOCKS}"
           }
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
