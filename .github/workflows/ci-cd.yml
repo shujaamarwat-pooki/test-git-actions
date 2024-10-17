@@ -15,6 +15,8 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
 
     - name: Set up Node.js
       uses: actions/setup-node@v2
@@ -26,7 +28,7 @@ jobs:
 
     - name: Populate Block List
       run: npm run populate
-      
+
     - name: Give Execute Permission to Script
       run: chmod +x ./scripts/check_new.sh
 
