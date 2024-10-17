@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { DropdownComponent } from './block/dropdown/dropdown.component';
+import { ButtonRedComponent } from './block/button-red/button-red.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { DropdownComponent } from './block/dropdown/dropdown.component';
     HomeComponent,
     NotfoundComponent,
     DropdownComponent,
+    ButtonRedComponent,
   ],
   imports: [
     BrowserModule,
