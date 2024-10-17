@@ -1,7 +1,14 @@
 #!/bin/bash
 
+# Check the number of commits
+commit_count=$(git rev-list --count HEAD)
+
 # Get the list of changed files
-changed_files=$(git diff --name-only HEAD~1..HEAD)
+if [[ $commit_count -gt 1 ]]; then
+  changed_files=$(git diff --name-only HEAD~1..HEAD)
+else
+  changed_files=$(git diff --name-only HEAD)  # Use HEAD only if there's only one commit
+fi
 
 # Declare an array to track unique block names
 declare -A block_names
