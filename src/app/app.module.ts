@@ -9,6 +9,7 @@ import { DisplayComponent } from './display/display.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { DropdownComponent } from './block/dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
     DisplayComponent,
     HomeComponent,
     NotfoundComponent,
+    DropdownComponent,
   ],
   imports: [
     BrowserModule,
