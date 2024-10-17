@@ -39,6 +39,16 @@ jobs:
     - name: Lint and Test
       run: npm run lint
 
-    - name: Echo Test
-      run: echo $NEW_BLOCKS
+    - name: Build Angular Library
+      run: npm run build
 
+    - name: Notify Slack
+      if: env.NEW_BLOCKS != ''
+      uses: slackapi/slack-github-action@v1.23.0
+      with:
+        payload: |
+          {
+            "text": "🚀 A new block/component has been added: ${env.NEW_BLOCKS}.
+          }
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
