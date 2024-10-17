@@ -14,6 +14,7 @@ import { ButtonRedComponent } from './block/button-red/button-red.component';
 import { ButtonGreenComponent } from './block/button-green/button-green.component';
 import { ButtonYellowComponent } from './block/button-yellow/button-yellow.component';
 import { ButtonPurpleComponent } from './block/button-purple/button-purple.component';
+import { ButtonBlueComponent } from './block/button-blue/button-blue.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ButtonPurpleComponent } from './block/button-purple/button-purple.compo
     ButtonGreenComponent,
     ButtonYellowComponent,
     ButtonPurpleComponent,
+    ButtonBlueComponent,
   ],
   imports: [
     BrowserModule,
