@@ -35,9 +35,9 @@ jobs:
     - name: Build Angular Library
       run: npm run build
 
-    - name: Deploy to Server
-      run: |
-        npm run deploy  # or custom deployment script
+    # - name: Deploy to Server
+    #   run: |
+    #     npm run deploy  # or custom deployment script
 
   # notify:
   #   runs-on: ubuntu-latest
