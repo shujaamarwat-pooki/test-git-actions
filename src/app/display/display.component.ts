@@ -1,6 +1,7 @@
 import { Component, OnInit, Type } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
+import { toPascalCase } from '../shared/utils';
 
 @Component({
   selector: 'app-display',
@@ -70,7 +71,7 @@ export class DisplayComponent implements OnInit {
   loadDynamicComponent(componentName: string) {
     import(`../block/${componentName}/${componentName}.component`)
       .then((module) => {
-        const pascalCaseName = this.toPascalCase(componentName);
+        const pascalCaseName = toPascalCase(componentName);
         const componentClass = module[`${pascalCaseName}Component`];
         if (componentClass) {
           this.dynamicComponent = componentClass;
@@ -82,13 +83,6 @@ export class DisplayComponent implements OnInit {
         console.error(`Error loading component ${componentName}:`, error);
         this.router.navigate(['/404']);
       });
-  }
-
-  toPascalCase(name: string): string {
-    return name
-      .split('-')
-      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-      .join('');
   }
 
   capitalize(text: string): string {

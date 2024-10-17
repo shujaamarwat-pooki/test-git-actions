@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DisplayComponent } from './display.component';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('DisplayComponent', () => {
   let component: DisplayComponent;
@@ -8,7 +11,16 @@ describe('DisplayComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DisplayComponent]
+      imports: [HttpClientModule],
+      declarations: [DisplayComponent],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            params: of({ name: 'button' }),
+          },
+        },
+      ],
     });
     fixture = TestBed.createComponent(DisplayComponent);
     component = fixture.componentInstance;
