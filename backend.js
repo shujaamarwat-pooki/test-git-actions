@@ -58,3 +58,23 @@ fs.writeFileSync(outputFile, output);
 console.log(
   `Successfully updated blocks.ts with ${updatedBlocks.length} blocks.`
 );
+
+// ...
+
+// Check if a block with the same name or id already exists
+const blockExists = existingBlocks.some(
+  (existingBlock) =>
+    existingBlock.name === file ||
+    existingBlock.id ===
+      `block-${existingBlocks.length + newBlocks.length + 1}`
+);
+
+// Only add if the block doesn't already exist
+if (!blockExists) {
+  const newId = `block-${existingBlocks.length + newBlocks.length + 1}`; // Generate a new unique ID
+  const newName = file; // Get the name of the new block from the file path
+  newBlocks.push({ id: newId, name: newName });
+  console.log("New block added:", newName); // Output the name of the new block
+}
+
+// ...

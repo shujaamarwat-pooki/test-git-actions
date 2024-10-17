@@ -27,6 +27,9 @@ jobs:
     - name: Populate Block List
       run: npm run populate
 
+    - name: Check new block
+      run: ./scripts/check_new.sh
+
     - name: Lint and Test
       run: npm run lint
 
