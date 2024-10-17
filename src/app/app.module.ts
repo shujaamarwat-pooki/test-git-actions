@@ -12,6 +12,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { DropdownComponent } from './block/dropdown/dropdown.component';
 import { ButtonRedComponent } from './block/button-red/button-red.component';
 import { ButtonGreenComponent } from './block/button-green/button-green.component';
+import { ButtonYellowComponent } from './block/button-yellow/button-yellow.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ButtonGreenComponent } from './block/button-green/button-green.componen
     DropdownComponent,
     ButtonRedComponent,
     ButtonGreenComponent,
+    ButtonYellowComponent,
   ],
   imports: [
     BrowserModule,
