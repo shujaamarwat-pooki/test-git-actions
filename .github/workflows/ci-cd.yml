@@ -54,7 +54,7 @@ jobs:
       with:
         payload: |
           {
-            "text": "A new block/component has been added: ${NEW_BLOCKS}"
+            "text": "${{env.NEW_BLOCKS}}"
           }
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
